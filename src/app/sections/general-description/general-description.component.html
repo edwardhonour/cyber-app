@@ -86,5 +86,7 @@
     </div>  
 
           </div>
-        <app-section-panel *ngIf="show_comments!='Y'&&show_documents!='Y'&&show_photos!='Y'&&show_saa!='Y'" [survey_id]="org_id" [section_id]="'10'"></app-section-panel>
+           <app-section-background [data]="data?.data" [survey_id]="org_id" [section_id]="'10'" (close)="closeAll()"></app-section-background>
+          <app-section-panel  *ngIf="show_comments!='Y'&&show_documents!='Y'&&show_photos!='Y'&&show_saa!='Y'" [survey_id]="org_id" [section_id]="'10'"></app-section-panel>      
+          <app-section-panel *ngIf="show_comments!='Y'&&show_documents!='Y'&&show_photos!='Y'&&show_saa!='Y'" [survey_id]="org_id" [section_id]="'10'"></app-section-panel>
     </div>
