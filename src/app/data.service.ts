@@ -17,6 +17,9 @@ export class DataService {
   url: any;
   un: any;
   role: any;
+  baseApiUrl = 'https://cybersurvey.org/up.php';  
+  baseVerifyUrl = 'https://cybersurvey.org/verify.php';  
+  public valid: any = {};
 
   constructor(private http: HttpClient) { 
         this.url='https://cybersurvey.org/api/cyber_router.php';
@@ -174,19 +177,6 @@ postTemplate(file_data:any) {
   return this.t;
 }
 
-}
-
-@Injectable({
-  providedIn: 'root',
-})
-export class FileUploadService {
-  // API url
-  baseApiUrl = 'https://cybersurvey.org/up.php';  
-  baseVerifyUrl = 'https://cybersurvey.org/verify.php';  
-  public valid: any = {};
-
-  uid: any = 0;
-  constructor(private http: HttpClient) {}
 
   upload(file:File, postData: any): Observable<any> {
 

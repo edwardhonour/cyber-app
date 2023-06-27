@@ -5,7 +5,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { FormsModule,  FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
-import { DataService, FileUploadService } from 'src/app/data.service';
+import { DataService } from 'src/app/data.service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxTablePaginationModule } from 'ngx-table-pagination';
 import { MatRadioModule } from '@angular/material/radio';
@@ -58,7 +58,7 @@ export class SettingsComponent {
     private _router: Router, 
     private _dataService: DataService,
     public http: HttpClient,
-    private fileUploadService: FileUploadService
+    private fileUploadService: DataService
   ) { }
   public uploadedFiles: Array<File> = [];
   data: any; 
