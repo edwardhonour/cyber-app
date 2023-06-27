@@ -19,7 +19,7 @@ export class DataService {
   role: any;
 
   constructor(private http: HttpClient) { 
-        this.url='https://protectivesecurity.org/api/cyber_router.php';
+        this.url='https://cybersurvey.org/api/cyber_router.php';
     }
 
   getLocalStorage() {
@@ -99,7 +99,7 @@ export class DataService {
       "uid": this.uid
     }
 
-    this.t= this.http.post("https://protectivesecurity.org/api/auth.php", data);
+    this.t= this.http.post("https://cybersurvey.org/api/auth.php", data);
     return this.t;
 
   }
@@ -126,7 +126,7 @@ export class DataService {
       "id": 6,
     }
   console.log(data)
-  this.t= this.http.post("https://protectivesecurity.org/down.php", data);
+  this.t= this.http.post("https://cybersurvey.org/down.php", data);
   return this.t;
 
   }
@@ -138,7 +138,7 @@ export class DataService {
       "uid": this.uid,
       "role": this.role
     }
-  this.t= this.http.post("https://protectivesecurity.org/api/psp-menu.php", data);
+  this.t= this.http.post("https://cybersurvey.org/api/psp-menu.php", data);
   return this.t;
 
   }
@@ -151,7 +151,7 @@ export class DataService {
       "role": this.role
     }
 
-  this.t= this.http.post("https://protectivesecurity.org/api/u.php", data);
+  this.t= this.http.post("https://cybersurvey.org/api/u.php", data);
   return this.t;
 
   }
@@ -163,7 +163,7 @@ export class DataService {
       "token": token
     }
 
-  this.t= this.http.post("https://protectivesecurity.org/api/enroll.php", data);
+  this.t= this.http.post("https://cybersurvey.org/api/enroll.php", data);
   return this.t;
 
 }
@@ -181,8 +181,8 @@ postTemplate(file_data:any) {
 })
 export class FileUploadService {
   // API url
-  baseApiUrl = 'https://protectivesecurity.org/up.php';  
-  baseVerifyUrl = 'https://protectivesecurity.org/verify.php';  
+  baseApiUrl = 'https://cybersurvey.org/up.php';  
+  baseVerifyUrl = 'https://cybersurvey.org/verify.php';  
   public valid: any = {};
 
   uid: any = 0;
@@ -215,7 +215,7 @@ export class FileUploadService {
       formData.append(k,postData[k]);
     }
 
-    return this.http.post("https://protectivesecurity.org/cyber_upload_photo.php", formData, { 
+    return this.http.post("https://cybersurvey.org/cyber_upload_photo.php", formData, { 
       reportProgress: true,
       observe: 'events',
     });
@@ -231,7 +231,7 @@ export class FileUploadService {
       formData.append(k,postData[k]);
     }
 
-    return this.http.post("https://protectivesecurity.org/cyber_upload_doc.php", formData, { 
+    return this.http.post("https://cybersurvey.org/cyber_upload_doc.php", formData, { 
       reportProgress: true,
       observe: 'events',
     });
