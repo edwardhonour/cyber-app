@@ -34,7 +34,7 @@ import { PageFooterComponent } from './template/page-footer/page-footer.componen
     FileUploadModule
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy },
-  { provide: 'WEBSERVER', useValue: 'https://cybersecurity.org/api/'}],
+  { provide: 'WEBSERVER', useValue: 'https://cybersurvey.org/api/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

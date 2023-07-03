@@ -22,8 +22,8 @@
                   </button>
                 </li>
                 <li class="mb-1">
-                  <button [routerLink]="['/survey/7']" class="btn align-items-center rounded">
-                    <i class="bi bi-file-lock"></i><span class="p-3">Assessment</span>
+                  <button [routerLink]="['/assessments']" class="btn align-items-center rounded">
+                    <i class="bi bi-file-lock"></i><span class="p-3">My Assessments</span>
                   </button>
                 </li>
                 <li class="mb-1">
@@ -52,12 +52,17 @@
                   </button>
                 </li>
                 <li class="mb-1">
+                  <button [routerLink]="['/sections']" class="btn btn-toggle align-items-center rounded">
+                    <i class="bi bi-gear"></i><span class="p-3">Sections</span>
+                  </button>
+                </li>
+                <li class="mb-1">
                   <button [routerLink]="['/settings']" class="btn btn-toggle align-items-center rounded">
                     <i class="bi bi-gear"></i><span class="p-3">Settings</span>
                   </button>
                 </li>
                 <li class="mb-1">
-                  <button [routerLink]="['/']" class="btn btn-toggle align-items-center rounded">
+                  <button [routerLink]="['/logout']" class="btn btn-toggle align-items-center rounded">
                     <span class="p-3">Logout</span>
                   </button>
                 </li>

@@ -47,7 +47,6 @@ console.log(this.data)
   constructor(private _dataService: DataService) {}
 
   primaryCheckboxChange(ob: MatCheckboxChange, id: any) {
-    console.log(id);
  //   let z = this.data.formData[id];
     let p = 'p'+id;
     console.log(p);
@@ -61,9 +60,10 @@ console.log(this.data)
 
   postChanges() {
     this._dataService.postForm("post-saa-option-change", this.data.saaFormData).subscribe((data:any)=>{
-      this.data=data;
+//      this.data=data;
      });
     }
+
     doReload() {
       location.reload();
     }

@@ -32,51 +32,61 @@
         <div  *ngIf="show_comments!='Y'&&show_documents!='Y'&&show_photos!='Y'&&show_saa!='Y'" class="card card-body mt-2">
           <div class="mb-3" style="color: black">
               <label style="color: black" for="exampleFormControlInput1" class="form-label">Facility Name</label>
-              <input type="text" [(ngModel)]="data?.formData.school_name" class="form-control" id="exampleFormControlInput1" placeholder="">
+              <input type="text" [(ngModel)]="data?.formData.facility_name" class="form-control" id="exampleFormControlInput1" placeholder="">
             </div>
             <div class="mb-3" style="color: black">
-              <label style="color: black" for="exampleFormControlInput1" class="form-label">Stakehholder Name</label>
-              <input type="text" [(ngModel)]="data?.formData.district_name" class="form-control" id="exampleFormControlInput1" placeholder="">
+              <label style="color: black" for="exampleFormControlInput1" class="form-label">Organization Name</label>
+              <input type="text" [(ngModel)]="data?.formData.org_name" class="form-control" id="exampleFormControlInput1" placeholder="">
             </div>            
             <div class="mb-3">
-              <label style="color: black" for="exampleFormControlInput1" class="form-label">Physical Address</label>
-              <input type="text" [(ngModel)]="data?.formData.delivery_address"  class="form-control" id="exampleFormControlInput1" placeholder="">
-            </div>
-            <div class="mb-3">
-              <label style="color: black" for="exampleFormControlInput1" class="form-label">Mailing Address</label>
-              <input type="text" [(ngModel)]="data?.formData.mailing_address"  class="form-control" id="exampleFormControlInput1" placeholder="">
+              <label style="color: black" for="exampleFormControlInput1" class="form-label">Address</label>
+              <input type="text" [(ngModel)]="data?.formData.facility_address"  class="form-control" id="exampleFormControlInput1" placeholder="">
             </div>
             <div class="row">
               <div class="col-3">
                       <label style="color: black" for="exampleFormControlInput1" class="form-label">City</label>
-                      <input type="text" [(ngModel)]="data?.formData.city"  class="form-control" id="exampleFormControlInput1" placeholder="">
+                      <input type="text" [(ngModel)]="data?.formData.facility_city"  class="form-control" id="exampleFormControlInput1" placeholder="">
               </div>
               <div class="col-3">
                   <label style="color: black" for="exampleFormControlInput1" class="form-label">State</label>
-                  <input type="text" [(ngModel)]="data?.formData.state"  class="form-control" id="exampleFormControlInput1" placeholder="">
+                  <input type="text" [(ngModel)]="data?.formData.facility_state"  class="form-control" id="exampleFormControlInput1" placeholder="">
           </div>
           <div class="col-3">
               <label style="color: black" for="exampleFormControlInput1" class="form-label">Zip</label>
-              <input type="text" [(ngModel)]="data?.formData.zip"  class="form-control" id="exampleFormControlInput1" placeholder="">
+              <input type="text" [(ngModel)]="data?.formData.facility_zip"  class="form-control" id="exampleFormControlInput1" placeholder="">
           </div>
           </div>    
           <div class="row mb-3">
             <div class="mb-3">
-              <label style="color: black" for="exampleFormControlInput1" class="form-label">Cyber Contact Name</label>
-              <input type="text" [(ngModel)]="data?.formData.cyber_contact_name"  class="form-control" id="exampleFormControlInput1" placeholder="">
+              <label style="color: black" for="exampleFormControlInput1" class="form-label">Contact Name</label>
+              <input type="text" [(ngModel)]="data?.formData.contact_name"  class="form-control" id="exampleFormControlInput1" placeholder="">
             </div>
           </div>   
           <div class="row mb-3">
             <div class="mb-3">
-              <label style="color: black" for="exampleFormControlInput1" class="form-label">Cyber Contact Email</label>
-              <input type="text" [(ngModel)]="data?.formData.cyber_contact_name"  class="form-control" id="exampleFormControlInput1" placeholder="">
+              <label style="color: black" for="exampleFormControlInput1" class="form-label">Contact Email</label>
+              <input type="text" [(ngModel)]="data?.formData.contact_email"  class="form-control" id="exampleFormControlInput1" placeholder="">
             </div>
           </div>   
           <div class="row mb-3">
             <div class="mb-3">
-              <label style="color: black" for="exampleFormControlInput1" class="form-label">Cyber Contact Phone</label>
-              <input type="text" [(ngModel)]="data?.formData.cyber_contact_name"  class="form-control" id="exampleFormControlInput1" placeholder="">
+              <label style="color: black" for="exampleFormControlInput1" class="form-label">Contact Phone</label>
+              <input type="text" [(ngModel)]="data?.formData.contact_phone"  class="form-control" id="exampleFormControlInput1" placeholder="">
             </div>  
+            </div>
+            <div class="row mb-3">
+              <div class="mb-3">
+                <label style="color: black" for="exampleFormControlInput1" class="form-label">Business Description</label>
+                <textarea style="width:95%; height: 240px;" type="text" [(ngModel)]="data?.formData.general_description"  class="form-control" id="exampleFormControlInput1" placeholder=""></textarea>
+              </div>  
+              </div>
+              <div class="row mb-3">
+                <div class="mb-3">
+                  <label style="color: black" for="exampleFormControlInput1" class="form-label">Reason for Assessment</label>
+                  <textarea style="width:95%; height: 240px;" type="text" [(ngModel)]="data?.formData.assessment_reason"  class="form-control" id="exampleFormControlInput1" placeholder=""></textarea>
+                </div>  
+                </div>
+
       <div class="row mb-3">
         <div class="col-4"></div>
         <div class="col-4"></div>
@@ -85,8 +95,7 @@
         </div>
     </div>  
 
-          </div>
-           <app-section-background [data]="data?.data" [survey_id]="org_id" [section_id]="'10'" (close)="closeAll()"></app-section-background>
+        
+     <!--      <app-section-background [data]="data?.data" [survey_id]="org_id" [section_id]="'10'" (close)="closeAll()"></app-section-background> -->
           <app-section-panel  *ngIf="show_comments!='Y'&&show_documents!='Y'&&show_photos!='Y'&&show_saa!='Y'" [survey_id]="org_id" [section_id]="'10'"></app-section-panel>      
-          <app-section-panel *ngIf="show_comments!='Y'&&show_documents!='Y'&&show_photos!='Y'&&show_saa!='Y'" [survey_id]="org_id" [section_id]="'10'"></app-section-panel>
     </div>

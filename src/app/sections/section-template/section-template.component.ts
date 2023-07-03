@@ -10,11 +10,15 @@ import { SectionDocumentsComponent } from '../section-documents/section-document
 import { UploadPhotoComponent } from 'src/app/components/upload-photo/upload-photo.component';
 import { UploadDocumentComponent } from 'src/app/components/upload-document/upload-document.component';
 import { SectionBackgroundComponent } from 'src/app/components/section-background/section-background.component';
+import { VulnerabilityPanelComponent } from '../vulnerability-panel/vulnerability-panel.component';
+import { ReportPanelComponent } from '../report-panel/report-panel.component';
 
 @Component({
   selector: 'app-section-template',
   standalone: true,
-  imports: [CommonModule, SectionBackgroundComponent, SectionPanelComponent, SectionCommentsComponent, SectionPhotosComponent, SectionSaaComponent, SectionDocumentsComponent, UploadPhotoComponent, UploadDocumentComponent],
+  imports: [CommonModule, SectionBackgroundComponent, SectionPanelComponent, 
+    SectionCommentsComponent, SectionPhotosComponent, SectionSaaComponent, 
+    SectionDocumentsComponent, UploadPhotoComponent, UploadDocumentComponent, VulnerabilityPanelComponent, ReportPanelComponent],
   templateUrl: './section-template.component.html',
   styleUrls: ['./section-template.component.css']
 })
@@ -34,6 +38,8 @@ export class SectionTemplateComponent implements OnInit {
   show_documents: any='N';
   show_comments: any='N';
   show_saa: any='N';
+  show_vuln: any = 'N';
+  show_report: any = 'N';
 
   parameters: any = {
     survey_id: '',
@@ -48,6 +54,21 @@ export class SectionTemplateComponent implements OnInit {
       this.show_comments='N';
       this.show_documents='N';
       this.show_saa='N';
+      this.show_report='N';
+      this.show_vuln='N';
+    }
+  }
+
+  toggleReport() {
+    if (this.show_report=='Y') {
+      this.show_report='N';
+    } else {
+      this.show_report='Y';
+      this.show_photos='N';
+      this.show_comments='N';
+      this.show_documents='N';
+      this.show_saa='N';
+      this.show_vuln='N';
     }
   }
 
@@ -59,6 +80,8 @@ export class SectionTemplateComponent implements OnInit {
       this.show_comments='Y';
       this.show_documents='N';
       this.show_saa='N';
+      this.show_report='N';
+      this.show_vuln='N';
     }
   }
 
@@ -70,6 +93,8 @@ export class SectionTemplateComponent implements OnInit {
       this.show_comments='N';
       this.show_documents='Y';
       this.show_saa='N';
+      this.show_report='N';
+      this.show_vuln='N';
     }
   }
 
@@ -78,6 +103,8 @@ export class SectionTemplateComponent implements OnInit {
     this.show_comments='N';
     this.show_documents='N';
     this.show_saa='N';
+    this.show_report='N';
+    this.show_vuln='N';
   }
 
   toggleSaa() {
@@ -88,6 +115,21 @@ export class SectionTemplateComponent implements OnInit {
       this.show_comments='N';
       this.show_documents='N';
       this.show_saa='Y';
+      this.show_report='N';
+      this.show_vuln='N';
+    }
+  }
+
+  toggleVuln() {
+    if (this.show_vuln=='Y') {
+      this.show_vuln='N';
+    } else {
+      this.show_photos='N';
+      this.show_comments='N';
+      this.show_documents='N';
+      this.show_saa='N';
+      this.show_report='N';
+      this.show_vuln='Y';
     }
   }
 

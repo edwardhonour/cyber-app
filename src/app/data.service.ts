@@ -17,6 +17,8 @@ export class DataService {
   url: any;
   un: any;
   role: any;
+  survey: any;
+
   baseApiUrl = 'https://cybersurvey.org/up.php';  
   baseVerifyUrl = 'https://cybersurvey.org/verify.php';  
   public valid: any = {};
@@ -31,6 +33,12 @@ export class DataService {
       this.uid="0";
     } else {
       this.uid=localStorage.getItem('uid')
+    }
+
+    if (localStorage.getItem('survey')===null) {
+      this.survey="0";
+    } else {
+      this.survey=localStorage.getItem('survey')
     }
 
     if (localStorage.getItem('un')===null) {
@@ -53,6 +61,7 @@ export class DataService {
       "id": id,
       "id2": id2,
       "id3": id3,      
+      "survey": this.survey,
       "uid": this.uid
     }
 
@@ -85,7 +94,8 @@ export class DataService {
     const data = {
       "q" : formID,
       "data": formData,
-      "uid": this.uid
+      "uid": this.uid,
+      "survey": this.survey
     }
 
   this.t= this.http.post(this.url, data);

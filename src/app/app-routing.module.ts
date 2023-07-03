@@ -31,14 +31,21 @@ import { SurveyComponent } from './features/survey/survey.component';
 import { GettingStartedComponent } from './pages/getting-started/getting-started.component';
 import { PhotoListComponent } from './features/photo-list/photo-list.component';
 import { CommentListComponent } from './features/comment-list/comment-list.component';
+import { SectionListComponent } from './admin/section-list/section-list.component';
+import { SurveyTableComponent } from './pages/survey-table/survey-table.component';
+import { AssessmentListComponent } from './pages/assessment-list/assessment-list.component';
+import { AddAssessmentComponent } from './pages/add-assessment/add-assessment.component';
 
 const routes: Routes = [
   { path: '', component: NewSigninComponent },
   { path: 'workspace-table', component: DocWorkspaceTableComponent },
   { path: 'workspaces', component: DocWorkspaceListComponent },
+  { path: 'assessments', component: AssessmentListComponent, resolve: { data: DataResolver }},
+  { path: 'add-assessment', component: AddAssessmentComponent, resolve: { data: DataResolver }},
   { path: 'orgs', component: AdminOrgListComponent, resolve: { data: DataResolver }},
   { path: 'settings', component: SettingsComponent, resolve: { data: DataResolver }},
   { path: 'photos', component: PhotoListComponent, resolve: { data: DataResolver }},
+  { path: 'sections', component: SectionListComponent, resolve: { data: DataResolver }},  
   { path: 'documents', component: DocumentListComponent, resolve: { data: DataResolver }},
   { path: 'comments', component: CommentListComponent, resolve: { data: DataResolver }},
   { path: 'getting-started', component: GettingStartedComponent },
@@ -68,6 +75,7 @@ const routes: Routes = [
   { path: 'user-logout', component: UserLogoutComponent },
   { path: 'enroll/:id', component: UserEnrollComponent },
   { path: 'enroll', component: UserEnrollComponent },
+  { path: 'logout', component: UserLogoutComponent }
 ];
 
 @NgModule({

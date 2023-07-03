@@ -44,6 +44,13 @@ export class NewSigninComponent implements OnInit {
   email: any = '';
   password: any = '';
   style: any = '';
+  stylew: any = '';
+  screenWidth: any = 1920;
+  screenHeight: any = 1080;
+  login_email: any = '';
+  login_password: any = '';
+  data: any;
+  error: any = '';
 
   /**
    * Constructor
@@ -58,21 +65,30 @@ export class NewSigninComponent implements OnInit {
     
   }
 
-  // -----------------------------------------------------------------------------------------------------
-  // @ Lifecycle hooks
-  // -----------------------------------------------------------------------------------------------------
-
-  /**
-   * On init
-   */
   ngOnInit(): void
   {
+
+     this.screenWidth = window.innerWidth-5;
+     this.screenHeight = window.innerHeight-175;
+     this.style="height: "+this.screenHeight+"px; width: "+this.screenWidth+"px;";
       if (localStorage.getItem('uid')===null) {
-          localStorage.setItem('uid','572');
+
       } else {
-       
+        this._router.navigateByUrl('/sadmin');
       }
-      this._router.navigateByUrl('/sadmin'); 
+  }
+
+  postForm() {
+    this._dataService.postLogin(this.login_email, this.login_password).subscribe((data:any)=>{
+      this.data=data;
+      if (data?.error_code=="0") {
+        localStorage.setItem('uid',data.uid);
+        localStorage.setItem('role',data.role);
+        this._router.navigateByUrl('/sadmin');
+      } else {      
+          this.error="Invalid Email or Password";
+      }
+    });
   }
 
 }
