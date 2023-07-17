@@ -35,6 +35,8 @@ import { SectionListComponent } from './admin/section-list/section-list.componen
 import { SurveyTableComponent } from './pages/survey-table/survey-table.component';
 import { AssessmentListComponent } from './pages/assessment-list/assessment-list.component';
 import { AddAssessmentComponent } from './pages/add-assessment/add-assessment.component';
+import { ThreatCatListComponent } from './admin/threat-cat-list/threat-cat-list.component';
+import { ThreatCatFormComponent } from './admin/threat-cat-form/threat-cat-form.component';
 
 const routes: Routes = [
   { path: '', component: NewSigninComponent },
@@ -42,6 +44,9 @@ const routes: Routes = [
   { path: 'workspaces', component: DocWorkspaceListComponent },
   { path: 'assessments', component: AssessmentListComponent, resolve: { data: DataResolver }},
   { path: 'add-assessment', component: AddAssessmentComponent, resolve: { data: DataResolver }},
+  { path: 'threat-cat-list', component: ThreatCatListComponent, resolve: { data: DataResolver }},
+  { path: 'threat-cat-form', component: ThreatCatFormComponent, resolve: { data: DataResolver }},
+  { path: 'threat-cat-form/:id', component: ThreatCatFormComponent, resolve: { data: DataResolver }},
   { path: 'orgs', component: AdminOrgListComponent, resolve: { data: DataResolver }},
   { path: 'settings', component: SettingsComponent, resolve: { data: DataResolver }},
   { path: 'photos', component: PhotoListComponent, resolve: { data: DataResolver }},
