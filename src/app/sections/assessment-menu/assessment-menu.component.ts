@@ -45,6 +45,15 @@ export class AssessmentMenuComponent implements OnInit {
     this.menuClick.emit(m);
   }
 
+  processTM() {
+    let m: any;
+    m={id: "999"};
+    this.data.list.forEach(function (value: any) {
+        value.active='N';
+    });
+    this.menuClick.emit(m);
+  }
+
   constructor(private _dataService: DataService) {
 
   }

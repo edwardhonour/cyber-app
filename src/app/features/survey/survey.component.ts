@@ -24,6 +24,7 @@ import { GeneralDescriptionComponent } from 'src/app/sections/general-descriptio
 import { StudentPopulationComponent } from 'src/app/sections/student-population/student-population.component';
 import { SectionTemplateComponent } from 'src/app/sections/section-template/section-template.component';
 import { AssessmentMenuComponent } from 'src/app/sections/assessment-menu/assessment-menu.component';
+import { ThreatTemplateComponent } from 'src/app/sections/threat-template/threat-template.component';
 
 @Component({
   selector: 'app-survey',
@@ -32,7 +33,7 @@ import { AssessmentMenuComponent } from 'src/app/sections/assessment-menu/assess
     FormsModule, SqlUploadComponent, SmartUploadComponent, SectionPanelComponent,
     SqlComponentsModule, SqlMenuComponent, FileUploadModule, HttpClientModule, 
     GeneralDescriptionComponent, AssessmentMenuComponent,
-    StudentPopulationComponent, SectionTemplateComponent,
+    StudentPopulationComponent, SectionTemplateComponent, ThreatTemplateComponent,
     AddDocumentFormComponent, SitebarWrapperComponent],
   templateUrl: './survey.component.html',
   styleUrls: ['./survey.component.css']
@@ -211,7 +212,11 @@ export class SurveyComponent  {
         if (this.data.section_id=='150') { 
             this.section_code='150';
             this.cyber='Y';
-        }                
+        }  
+        if (this.data.section_id=='999') { 
+          this.section_code='999';
+          this.threat='Y';
+      }                
             console.log(this.data);
             if (this.data.user.force_logout>0) {
                 localStorage.removeItem('uid');

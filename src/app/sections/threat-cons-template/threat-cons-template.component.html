@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Category</th>
+                            <th>Consequense/Damage</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let m of data.list">
+                            <td>{{ m.cat_id }}</td>
+                            <td>{{ m.cat_name }}</td>
+                            <td><select class="form-control">
+                                <option value="0">Minimal</option>
+                                <option value="1">Low</option>
+                                <option value="2">Medium</option>
+                                <option value="3">High</option>
+                                <option value="4">Very High</option>
+                            </select></td>
+                            <td><button class="btn btn-secondary">Update</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

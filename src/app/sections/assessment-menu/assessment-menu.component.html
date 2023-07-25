@@ -9,4 +9,6 @@
             class="list-group-item d-flex justify-content-between align-items-center active">{{ m.section_name }}
                     <span *ngIf="m.badge!==''" class="badge bg-primary rounded-pill">{{ m.badge }}</span></li>
         </ng-container>
+        <li (click)="processTM()" 
+        class="list-group-item d-flex justify-content-between align-items-center">Threat Matrix</li>
     </div>
